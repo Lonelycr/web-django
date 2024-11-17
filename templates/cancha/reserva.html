@@ -1,0 +1,82 @@
+{% extends "cancha/base.html" %}
+{% block contenido %}
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+    .full-height {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    body {
+        background-color: #0a6077;
+    }
+    .card {
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        width: 100%;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    input[type="date"],
+    input[type="time"],
+    input[type="number"] {
+        background-color: #f8f9fa;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        padding: 10px;
+        transition: border-color 0.3s;
+        width: 100%;
+    }
+    input[type="date"]:focus,
+    input[type="time"]:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+    .btn {
+        border-radius: 8px;
+        width: 100%;
+    }
+</style>
+<div class="container full-height">
+    <div class="card shadow-lg">
+        <h2 class="text-center text-primary mb-4">Reservar {{ infraestructura.nombre }}</h2>
+
+        <form method="POST" action="{% url 'procesar_reserva' infraestructura.id %}">
+            {% csrf_token %}
+            
+            <div class="form-group mb-3">
+                <label>Fecha de Reserva:</label>
+                <input type="date" name="fecha" class="form-control" required id="fecha_reserva">
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Hora de Reserva:</label>
+                <input type="time" name="hora" class="form-control" step="3600" required>
+            </div>
+
+            <div class="form-group mb-4">
+                <label>Cantidad de Personas:</label>
+                <input type="number" name="cantidad_personas" class="form-control" 
+                       max="{{ infraestructura.capacidad }}" required>
+                <small class="text-muted">Capacidad máxima: {{ infraestructura.capacidad }} personas.</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Confirmar Reserva</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Establece la fecha mínima en el campo de fecha al día de hoy
+    document.getElementById('fecha_reserva').min = new Date().toISOString().split('T')[0];
+</script>
+
+{% endblock contenido %}
