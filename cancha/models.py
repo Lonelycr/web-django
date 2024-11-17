@@ -21,7 +21,7 @@ class Infraestructura(models.Model):
     ]
 
     nombre = models.CharField(max_length=100)
-    tipo = models.CharField(max_length=50)
+    tipo = models.CharField(max_length=50, default='default_value')
     capacidad = models.IntegerField()
     descripcion = models.TextField()
     horarios = models.CharField(max_length=50)
