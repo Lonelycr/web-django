@@ -71,7 +71,7 @@ DATABASES = {
         'NAME': 'canchas',
         'USER' : 'root',
         'PASSWORD' : 'Admin12345',
-        'HOST' : 'localhost',
+        'HOST' : 'database-1.cvlbdup2cduc.us-east-1.rds.amazonaws.com',
         'PORT' : '3306',
         'OPTIONS' : {
             'init_command':'SET sql_mode="STRICT_ALL_TABLES"',
