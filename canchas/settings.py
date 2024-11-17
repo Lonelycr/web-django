@@ -70,7 +70,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'canchas',
         'USER' : 'root',
-        'PASSWORD' : '',
+        'PASSWORD' : 'Admin01',
         'HOST' : 'localhost',
         'PORT' : '3306',
         'OPTIONS' : {
