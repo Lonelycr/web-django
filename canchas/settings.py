@@ -71,7 +71,7 @@ DATABASES = {
         'NAME': 'canchas',
         'USER' : 'root',
         'PASSWORD' : '',
-        'HOST' : ' 100.26.43.20',
+        'HOST' : 'localhost',
         'PORT' : '3306',
         'OPTIONS' : {
             'init_command':'SET sql_mode="STRICT_ALL_TABLES"',
