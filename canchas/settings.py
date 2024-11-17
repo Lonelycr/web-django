@@ -69,8 +69,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'canchas',
-        'USER' : 'database-1.cvlbdup2cduc.us-east-1.rds.amazonaws.com',
-        'PASSWORD' : 'Admin123',
+        'USER' : 'root',
+        'PASSWORD' : '',
         'HOST' : 'database-1.cvlbdup2cduc.us-east-1.rds.amazonaws.com',
         'PORT' : '3306',
         'OPTIONS' : {
