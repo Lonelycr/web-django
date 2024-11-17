@@ -69,9 +69,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'canchas',
-        'USER' : 'user_canchas',
-        'PASSWORD' : 'Admin01',
-        'HOST' : 'localhost',
+        'USER' : 'root',
+        'PASSWORD' : '',
+        'HOST' : 'database-1.cvlbdup2cduc.us-east-1.rds.amazonaws.com',
         'PORT' : '3306',
         'OPTIONS' : {
             'init_command':'SET sql_mode="STRICT_ALL_TABLES"',
